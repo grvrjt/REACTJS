@@ -1,4 +1,5 @@
 @import 'mixin';
+@import 'dashboard';
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -42,7 +43,7 @@ a {
     &::-webkit-scrollbar {
       display: none;
     }
-    > div {                        
+    > div {
       margin: 2rem 1rem;
       > h5 {
         @include heading(2px);
