@@ -3,6 +3,7 @@ import AdminSidebar from "../components/AdminSidebar"
 import { BsSearch } from "react-icons/bs";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi"
 import userPic from "../assets/userPic.png";
+import data from "../assets/data.json";
 
 const Dashboard = () => {
   return (
@@ -41,6 +42,28 @@ const Dashboard = () => {
             heading="Products"
             color="rgb(76 0 255)"
           />
+        </section>
+
+        <section className="graph-container">
+          <div className="revenue-chart">
+            <h2>Revenue & Transaction</h2>
+            {/* Grapph here */}
+
+          </div>
+
+          <div className="dashboard-categories">
+            <h2>Inventory</h2>
+            <div>
+              {data.categories.map((i) => (
+                <CategoryItem
+                  key={i.heading}
+                  heading={i.heading}
+                  value={i.value}
+                  color={`hsl(${i.value * 4},${i.value}%,50%)`}
+                />
+              ))}
+            </div>
+          </div>
         </section>
       </main>
     </div>
@@ -93,6 +116,27 @@ const WidgetItem = ({
       </span>
     </div>
   </article>
+);
+
+interface CategoryItemProps {
+  color: string;
+  value: number;
+  heading: string;
+}
+
+const CategoryItem = ({ color, value, heading }: CategoryItemProps) => (
+  <div className="category-item">
+    <h5>{heading}</h5>
+
+    <div>
+      <div style={{
+        backgroundColor: color,
+        width: `${value}%`
+      }}
+      ></div>
+    </div>
+    <span>{value}%</span>
+  </div>
 );
 
 export default Dashboard
