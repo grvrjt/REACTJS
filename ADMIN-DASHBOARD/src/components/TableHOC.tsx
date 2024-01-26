@@ -22,7 +22,7 @@ function TableHOC<T extends Object>(
             columns,
             data,
             initialState: {
-                pageSize: 6,
+                pageSize: 4,
             },
         };
 
@@ -34,6 +34,7 @@ function TableHOC<T extends Object>(
             prepareRow,
             nextPage,
             pageCount,
+            gotoPage,
             state: { pageIndex },
             previousPage,
             canNextPage,
