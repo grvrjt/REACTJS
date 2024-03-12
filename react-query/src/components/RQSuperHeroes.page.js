@@ -6,12 +6,21 @@ const fetchSuerHeroes = () => {
 }
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, data } = useQuery('super-heroes', fetchSuerHeroes);
-console.log( { isLoading, data } )
+  let { isLoading, data, isError, error, isFetching } = useQuery(
+    'super-heroes',
+    fetchSuerHeroes,
+    {
+      // cacheTime: 5000 
+      // staleTime: 30000
+    }
+  );
+  console.log({ isLoading, isFetching, data })
   if (isLoading) {
     return <h2>Loading....</h2>
   }
-
+  if (isError) {
+    return <h2>{error.message}</h2>
+  }
   return <><h2>React Query Super Heroes Page</h2>
     {data?.data.map((hero) => {
       return <div key={hero.name}>{hero.name}</div>
