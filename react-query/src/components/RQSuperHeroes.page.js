@@ -1,4 +1,5 @@
 import { useSuperHeroesData } from "../hooks/useSuperHeroesData"
+import { Link } from 'react-router-dom';
 
 const onSuccess = (data) => {
   console.log("Side effect after on sucess !", data)
@@ -17,8 +18,8 @@ export const RQSuperHeroesPage = () => {
   }
   return <><h2>React Query Super Heroes Page</h2>
     <button onClick={refetch}>Fecth the heroes</button>
-    {data.map((heroName) => {
-      return <div key={heroName}>{heroName}</div>
+    {data?.data.map((hero) => {
+      return <div key={hero.id}><Link to = {`/rq-super-heroes/${hero.id}`}>{hero.name}</Link></div>
     })}
   </>
 }
