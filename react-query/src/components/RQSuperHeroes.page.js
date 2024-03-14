@@ -19,7 +19,8 @@ export const RQSuperHeroesPage = () => {
   return <><h2>React Query Super Heroes Page</h2>
     <button onClick={refetch}>Fecth the heroes</button>
     {data?.data.map((hero) => {
-      return <div key={hero.id}><Link to = {`/rq-super-heroes/${hero.id}`}>{hero.name}</Link></div>
+      return <div key={hero.id}><Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link></div>
     })}
+    <Link to={'/rq-parallel'}> <button >Data with Friends List</button> </Link>
   </>
 }
