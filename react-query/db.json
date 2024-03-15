@@ -29,5 +29,21 @@
       "id": 3,
       "name": "Rahul"
     }
+  ],
+  "users": [
+    {
+      "id": "gaurav@example.com",
+      "channelId": "youtubeChannel"
+    }
+  ],
+  "channels": [
+    {
+      "id": "youtubeChannel",
+      "cources": [
+        "ReactJs",
+        "Javascript",
+        "Python"
+      ]
+    }
   ]
 }
