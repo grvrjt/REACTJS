@@ -4,6 +4,8 @@ import Counter from './components/Counter';
 import MyButton from './components/MyButton';
 import Gallery from './components/Gallery';
 import Profile from './components/Files/Profile';
+import ProfileOne from './components/ProfileOne';
+import Filter from './components/Filter';
 function App() {
   const [count, setCount] = useState(0);
   const handleClick = () => {
@@ -20,6 +22,8 @@ function App() {
       <h1>From Gallery component</h1>
       <Gallery />
       <Gallery />
+      <ProfileOne/>
+      <Filter/>
     </div>
   );
 }
